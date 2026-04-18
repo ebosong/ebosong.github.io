@@ -3,21 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>YOUR NAME | Embodied AI Researcher</title>
+    <title>YOUR NAME | Embodied Autonomy Research</title>
     <meta
       name="description"
-      content="Personal academic homepage of YOUR NAME, focusing on Embodied AI, UAV, robotics, autonomous driving, VLA, RL, world models, and multimodal decision making."
+      content="Personal academic homepage of YOUR NAME, focused on embodied intelligence, UAV navigation, autonomous driving, world models, VLA systems, and reinforcement learning."
     />
     <meta
       name="keywords"
-      content="Embodied AI,UAV,Robotics,Autonomous Driving,Vision-Language-Action,Reinforcement Learning,World Models"
+      content="Embodied Intelligence,UAV Navigation,Autonomous Driving,Robotics,Vision-Language-Action,Reinforcement Learning,World Models,Robot Learning"
     />
     <meta name="author" content="YOUR NAME" />
 
-    <meta property="og:title" content="YOUR NAME | Embodied AI Researcher" />
+    <meta property="og:title" content="YOUR NAME | Embodied Autonomy Research" />
     <meta
       property="og:description"
-      content="Academic homepage for Embodied AI research: aerial intelligence, robotics, VLA, RL, world models, and multimodal decision making."
+      content="Research homepage for embodied autonomy: UAV navigation, autonomous driving, robot learning, VLA systems, RL, and world models."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://YOUR_GITHUB_USERNAME.github.io/" />
@@ -36,7 +36,10 @@
 
     <header class="site-header" id="top">
       <div class="container nav-container">
-        <a class="brand" href="#top">YOUR NAME</a>
+        <a class="brand" href="#top">
+          <span>YOUR NAME</span>
+          <small>Embodied Autonomy</small>
+        </a>
         <button
           class="nav-toggle"
           id="navToggle"
@@ -46,11 +49,12 @@
           <span></span><span></span><span></span>
         </button>
         <nav class="site-nav" id="siteNav">
-          <a href="#about">About</a>
+          <a href="#agenda">Agenda</a>
           <a href="#research">Research</a>
           <a href="#projects">Projects</a>
           <a href="#publications">Publications</a>
           <a href="#news">News</a>
+          <a href="#resources">Resources</a>
           <a href="#contact">Contact</a>
           <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
             <span id="themeLabel">Dark</span>
@@ -63,25 +67,28 @@
       <section class="hero section">
         <div class="container hero-grid reveal">
           <div class="hero-content">
-            <p class="eyebrow">Embodied Intelligence Research</p>
-            <h1>YOUR NAME</h1>
+            <p class="eyebrow">Embodied Intelligence | UAV Navigation | Autonomous Driving</p>
+            <h1>Learning to perceive, predict, and act in the physical world.</h1>
             <p class="hero-tagline">
-              Researching scalable embodied intelligence for perception, decision
-              making, and control in complex real-world systems.
+              I study embodied autonomy systems that connect multimodal perception,
+              world modeling, decision making, and closed-loop control for aerial
+              robots, autonomous vehicles, and general-purpose embodied agents.
             </p>
-            <div class="keywords">
+            <div class="keywords" aria-label="Research keywords">
               <span>Embodied AI</span>
-              <span>UAV</span>
-              <span>Robotics</span>
+              <span>UAV Navigation</span>
               <span>Autonomous Driving</span>
+              <span>Robot Learning</span>
               <span>VLA</span>
-              <span>RL</span>
+              <span>RL / IL</span>
               <span>World Models</span>
+              <span>Safety</span>
             </div>
             <p class="hero-intro">
-              I focus on building end-to-end intelligent systems that integrate
-              multimodal perception, planning, and control across aerial, mobile,
-              and robotic platforms.
+              This homepage is organized like a compact research lab page: a clear
+              research agenda, active project lines, publication placeholders,
+              recent updates, and collaboration links. Replace the placeholders
+              with your institution, papers, code, datasets, and demos.
             </p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="assets/CV.pdf" target="_blank" rel="noopener"
@@ -92,86 +99,125 @@
               >
             </div>
           </div>
-          <aside class="hero-profile">
-            <div class="profile-photo-placeholder">Profile Photo</div>
-            <p><strong>Affiliation:</strong> Your Institution</p>
-            <p><strong>Location:</strong> Your City, Your Country</p>
+
+          <aside class="research-panel" aria-label="Research system overview">
+            <div class="research-diagram">
+              <div class="diagram-node">Perception</div>
+              <div class="diagram-link"></div>
+              <div class="diagram-node">World Model</div>
+              <div class="diagram-link"></div>
+              <div class="diagram-node">Planning</div>
+              <div class="diagram-link"></div>
+              <div class="diagram-node">Control</div>
+            </div>
+            <div class="profile-meta">
+              <p><strong>Name:</strong> YOUR NAME</p>
+              <p><strong>Affiliation:</strong> Your Institution / Lab</p>
+              <p><strong>Location:</strong> Your City, Your Country</p>
+              <p><strong>Focus:</strong> Embodied autonomy for real-world mobility</p>
+            </div>
           </aside>
         </div>
       </section>
 
-      <section id="about" class="section">
+      <section id="agenda" class="section">
         <div class="container reveal">
-          <h2>About Me</h2>
+          <p class="section-kicker">Research Agenda</p>
+          <h2>From foundation models to embodied decision making.</h2>
           <p class="section-text">
-            I am a researcher in embodied intelligence, with interests spanning
-            aerial agents, robotics, autonomous driving, and multimodal
-            decision-making systems. My work emphasizes principled algorithm
-            design and system-level integration, including vision-language-action
-            pipelines, reinforcement learning, and world model-based reasoning for
-            long-horizon tasks in open environments.
+            My research interest is centered on agents that must make decisions
+            under uncertainty while moving through complex environments. The long-term
+            goal is to build data-efficient, interpretable, and deployable autonomy
+            stacks for drones, autonomous vehicles, and mobile robots.
           </p>
+          <div class="agenda-grid">
+            <article class="agenda-item">
+              <span>01</span>
+              <h3>Problem-driven autonomy</h3>
+              <p>
+                Start from concrete tasks such as long-range navigation, urban
+                interaction, obstacle avoidance, and mission-level planning.
+              </p>
+            </article>
+            <article class="agenda-item">
+              <span>02</span>
+              <h3>Learning with structure</h3>
+              <p>
+                Combine representation learning, dynamics priors, optimization,
+                and safety constraints instead of treating autonomy as a black box.
+              </p>
+            </article>
+            <article class="agenda-item">
+              <span>03</span>
+              <h3>Systems that can be tested</h3>
+              <p>
+                Build methods that can be evaluated in simulation, datasets,
+                closed-loop benchmarks, and eventually real platforms.
+              </p>
+            </article>
+          </div>
         </div>
       </section>
 
       <section id="research" class="section section-alt">
         <div class="container reveal">
-          <h2>Research Interests</h2>
+          <p class="section-kicker">Research Themes</p>
+          <h2>Core directions</h2>
           <div class="card-grid">
             <article class="card">
-              <h3>Embodied AI</h3>
+              <h3>Embodied Intelligence</h3>
               <p>
-                Foundations of intelligent agents that perceive, reason, and act
-                through continuous interaction with physical or simulated worlds.
+                Learning agents that connect perception, memory, language,
+                planning, and action through continuous interaction.
               </p>
             </article>
             <article class="card">
-              <h3>Aerial Embodied Intelligence</h3>
+              <h3>UAV Navigation</h3>
               <p>
-                Decision and control for UAV systems under long-range navigation,
-                uncertainty, and dynamic scene constraints.
-              </p>
-            </article>
-            <article class="card">
-              <h3>Robotics &amp; Manipulation</h3>
-              <p>
-                Learning-driven manipulation and robot autonomy with robust
-                perception-action coupling in unstructured settings.
+                Robust aerial navigation for long-horizon missions, dynamic
+                obstacles, GPS-denied settings, and uncertain environments.
               </p>
             </article>
             <article class="card">
               <h3>Autonomous Driving</h3>
               <p>
-                Closed-loop planning and policy learning for safe and adaptive
-                driving behavior in complex traffic environments.
-              </p>
-            </article>
-            <article class="card">
-              <h3>Vision-Language-Action</h3>
-              <p>
-                VLA architectures that align semantic understanding with grounded
-                actions for embodied agents.
-              </p>
-            </article>
-            <article class="card">
-              <h3>Reinforcement Learning</h3>
-              <p>
-                Sample-efficient RL algorithms for long-horizon control,
-                exploration, and policy generalization across tasks.
+                Scene understanding, behavior prediction, interactive planning,
+                and safety-aware closed-loop decision making for road agents.
               </p>
             </article>
             <article class="card">
               <h3>World Models</h3>
               <p>
-                Latent predictive modeling for planning, simulation, and
-                uncertainty-aware decision making in embodied systems.
+                Predictive latent models for counterfactual rollout, uncertainty
+                estimation, policy learning, and planning under partial observability.
               </p>
             </article>
             <article class="card">
-              <h3>Multimodal Decision Making</h3>
+              <h3>Vision-Language-Action</h3>
               <p>
-                Joint modeling of visual, linguistic, spatial, and temporal cues
-                for robust downstream control and planning.
+                Grounding natural language instructions in spatial reasoning,
+                affordances, trajectories, and executable robot actions.
+              </p>
+            </article>
+            <article class="card">
+              <h3>RL and Imitation Learning</h3>
+              <p>
+                Sample-efficient policy learning from simulation, demonstrations,
+                offline logs, and online interaction.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Safety and Evaluation</h3>
+              <p>
+                Stress-testing autonomy through corner cases, uncertainty-aware
+                prediction, formal constraints, and closed-loop metrics.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Datasets and Simulation</h3>
+              <p>
+                Reusable benchmarks, synthetic environments, sensor-fusion logs,
+                and evaluation protocols for embodied decision systems.
               </p>
             </article>
           </div>
@@ -180,16 +226,23 @@
 
       <section id="projects" class="section">
         <div class="container reveal">
-          <h2>Selected Projects</h2>
+          <p class="section-kicker">Active Lines</p>
+          <h2>Selected projects</h2>
+          <p class="section-note">
+            Replace these project placeholders with your papers, demos, datasets,
+            videos, or code repositories.
+          </p>
           <div class="project-grid" id="projectGrid"></div>
         </div>
       </section>
 
       <section id="publications" class="section section-alt">
         <div class="container reveal">
-          <h2>Publications</h2>
+          <p class="section-kicker">Outputs</p>
+          <h2>Publications and preprints</h2>
           <p class="section-note">
-            Representative placeholders below. Replace with your actual papers.
+            Keep this section factual. List accepted papers, preprints, workshop
+            papers, technical reports, and project pages.
           </p>
           <div id="publicationList" class="publication-list"></div>
         </div>
@@ -197,20 +250,36 @@
 
       <section id="news" class="section">
         <div class="container reveal">
-          <h2>Recent News</h2>
+          <p class="section-kicker">Lab-style Updates</p>
+          <h2>Recent news</h2>
           <ul id="newsList" class="news-list"></ul>
         </div>
       </section>
 
-      <section id="contact" class="section section-alt">
+      <section id="resources" class="section section-alt">
         <div class="container reveal">
-          <h2>Contact</h2>
+          <p class="section-kicker">Resources</p>
+          <h2>Code, datasets, and notes</h2>
+          <div id="resourceGrid" class="resource-grid"></div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container reveal">
+          <p class="section-kicker">Contact</p>
+          <h2>Collaboration and opportunities</h2>
+          <p class="section-text">
+            I am interested in collaborations around embodied intelligence,
+            aerial autonomy, autonomous driving, robot learning, and multimodal
+            decision systems.
+          </p>
           <div class="contact-grid">
             <a href="mailto:your.email@example.com">Email: your.email@example.com</a>
             <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener"
               >GitHub: @YOUR_GITHUB_USERNAME</a
             >
             <a href="#" target="_blank" rel="noopener">Google Scholar: YOUR_PROFILE_LINK</a>
+            <a href="#" target="_blank" rel="noopener">Lab / Group: YOUR_LAB_LINK</a>
             <a href="assets/CV.pdf" target="_blank" rel="noopener">CV: Download PDF</a>
           </div>
         </div>
@@ -220,13 +289,13 @@
     <footer class="site-footer">
       <div class="container">
         <p>
-          &copy; <span id="currentYear"></span> YOUR NAME. Built for academic
-          research presentation.
+          &copy; <span id="currentYear"></span> YOUR NAME. Academic homepage for
+          embodied autonomy research.
         </p>
       </div>
     </footer>
 
-    <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">&uarr;</button>
     <script src="script.js"></script>
   </body>
 </html>

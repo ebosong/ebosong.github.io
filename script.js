@@ -1,75 +1,123 @@
 const projects = [
   {
-    title: "UAV Long-range Navigation",
+    status: "Active",
+    title: "Long-Horizon UAV Navigation",
     description:
-      "Learning-based navigation for aerial agents under sparse signals, dynamic obstacles, and partial observability.",
-    tags: ["UAV", "Navigation", "RL", "Planning"],
+      "Learning-based aerial navigation for GPS-denied or partially observable environments, with emphasis on active perception, obstacle avoidance, and mission-level planning.",
+    tags: ["UAV", "Navigation", "Active Perception", "Planning"],
     links: { code: "#", paper: "#", page: "#" },
   },
   {
-    title: "World Model-based Decision Making",
+    status: "Active",
+    title: "World Models for Embodied Agents",
     description:
-      "Latent dynamics modeling for long-horizon prediction and uncertainty-aware policy optimization.",
-    tags: ["World Model", "Decision Making", "Control"],
+      "Predictive latent dynamics for counterfactual rollout, uncertainty-aware planning, and policy learning across simulated and real embodied tasks.",
+    tags: ["World Model", "Embodied AI", "Prediction", "Control"],
     links: { code: "#", paper: "#", page: "#" },
   },
   {
-    title: "VLA for Embodied Agents",
+    status: "Prototype",
+    title: "Vision-Language-Action Navigation",
     description:
-      "Vision-language-action alignment for instruction following and grounded embodied task execution.",
-    tags: ["VLA", "Multimodal", "Embodied AI"],
+      "Grounding language instructions in maps, visual observations, waypoints, and executable action sequences for mobile and aerial robots.",
+    tags: ["VLA", "Multimodal", "Grounding", "Robot Learning"],
     links: { code: "#", paper: "#", page: "#" },
   },
   {
-    title: "RL for Autonomous Driving",
+    status: "Active",
+    title: "Interactive Autonomous Driving",
     description:
-      "Safe and adaptive closed-loop driving policies with simulation-to-real transfer considerations.",
-    tags: ["Autonomous Driving", "RL", "Safety"],
+      "Closed-loop behavior prediction and planning for urban traffic, with attention to interaction, safety, uncertainty, and rare corner cases.",
+    tags: ["Autonomous Driving", "Prediction", "Planning", "Safety"],
     links: { code: "#", paper: "#", page: "#" },
   },
   {
-    title: "Active Perception and Localization",
+    status: "Exploration",
+    title: "RL and Imitation for Mobility",
     description:
-      "Joint active sensing and localization strategies for robust perception in long-horizon environments.",
-    tags: ["Active Perception", "Localization", "Embodied"],
+      "Data-efficient policies that combine offline logs, demonstrations, model-based rollouts, and online refinement for navigation and driving.",
+    tags: ["RL", "Imitation Learning", "Offline Data", "Sim-to-Real"],
     links: { code: "#", paper: "#", page: "#" },
   },
   {
-    title: "Multimodal Embodied Planning",
+    status: "Benchmark",
+    title: "Embodied Autonomy Evaluation",
     description:
-      "Integrating visual, language, and temporal context for hierarchical planning and control.",
-    tags: ["Multimodal", "Planning", "Robotics"],
+      "Scenario suites, stress tests, and metrics for evaluating embodied decision systems beyond open-loop accuracy.",
+    tags: ["Benchmark", "Datasets", "Simulation", "Evaluation"],
     links: { code: "#", paper: "#", page: "#" },
   },
 ];
 
 const publications = [
   {
-    title: "[Placeholder] Title of Publication One",
+    title: "[Placeholder] Learning World Models for Long-Horizon UAV Navigation",
     authors: "YOUR NAME, Co-author A, Co-author B",
-    venue: "Conference / Journal, 2026",
+    venue: "Conference / Journal / Preprint, 2026",
     links: { paper: "#", code: "#", project: "#" },
   },
   {
-    title: "[Placeholder] Title of Publication Two",
+    title: "[Placeholder] Uncertainty-Aware Planning for Interactive Autonomous Driving",
     authors: "YOUR NAME, Co-author C, Co-author D",
-    venue: "Conference / Journal, 2025",
+    venue: "Conference / Journal / Workshop, 2025",
     links: { paper: "#", code: "#", project: "#" },
   },
   {
-    title: "[Placeholder] Title of Publication Three",
+    title: "[Placeholder] Vision-Language-Action Grounding for Embodied Agents",
     authors: "YOUR NAME, Co-author E, Co-author F",
-    venue: "Conference / Journal, 2025",
+    venue: "Conference / Journal / Preprint, 2025",
     links: { paper: "#", code: "#", project: "#" },
   },
 ];
 
 const newsItems = [
-  "[2026.04] Homepage launched.",
-  "[2026.03] Working on embodied intelligence, RL, and world models.",
-  "[2026.02] Exploring multimodal planning for embodied agents.",
-  "[2026.01] Ongoing studies on long-range navigation and active perception.",
-  "[2025.12] Developing VLA-oriented system design for embodied control.",
+  {
+    date: "2026.04",
+    text: "Homepage revised into a lab-style embodied autonomy research page.",
+  },
+  {
+    date: "2026.03",
+    text: "Working on world models, UAV navigation, and closed-loop embodied decision making.",
+  },
+  {
+    date: "2026.02",
+    text: "Exploring VLA-style instruction following for aerial and mobile robots.",
+  },
+  {
+    date: "2026.01",
+    text: "Building autonomous driving evaluation notes around interaction, uncertainty, and safety.",
+  },
+  {
+    date: "2025.12",
+    text: "Started organizing research artifacts for code, datasets, demos, and reading notes.",
+  },
+];
+
+const resources = [
+  {
+    title: "Code",
+    description:
+      "Add repositories for navigation, planning, perception, VLA experiments, or autonomous driving benchmarks.",
+    links: { GitHub: "https://github.com/YOUR_GITHUB_USERNAME" },
+  },
+  {
+    title: "Datasets",
+    description:
+      "Link collected logs, simulation scenarios, annotated trajectories, or dataset documentation.",
+    links: { Dataset: "#" },
+  },
+  {
+    title: "Project Demos",
+    description:
+      "Add videos, interactive demos, project pages, or benchmark dashboards for selected systems.",
+    links: { Demos: "#" },
+  },
+  {
+    title: "Reading Notes",
+    description:
+      "Collect notes on embodied AI, robot learning, autonomous driving, world models, and safe RL.",
+    links: { Notes: "#" },
+  },
 ];
 
 function renderProjects() {
@@ -79,6 +127,7 @@ function renderProjects() {
     .map(
       (project) => `
       <article class="project-card">
+        <div class="project-status">${project.status}</div>
         <h3>${project.title}</h3>
         <p>${project.description}</p>
         <div class="project-tags">
@@ -118,7 +167,39 @@ function renderPublications() {
 function renderNews() {
   const list = document.getElementById("newsList");
   if (!list) return;
-  list.innerHTML = newsItems.map((item) => `<li>${item}</li>`).join("");
+  list.innerHTML = newsItems
+    .map(
+      (item) => `
+      <li>
+        <span class="news-date">${item.date}</span>
+        <span class="news-text">${item.text}</span>
+      </li>
+    `
+    )
+    .join("");
+}
+
+function renderResources() {
+  const grid = document.getElementById("resourceGrid");
+  if (!grid) return;
+  grid.innerHTML = resources
+    .map((resource) => {
+      const links = Object.entries(resource.links)
+        .map(
+          ([label, href]) =>
+            `<a href="${href}" target="_blank" rel="noopener">${label}</a>`
+        )
+        .join("");
+
+      return `
+        <article class="resource-card">
+          <h3>${resource.title}</h3>
+          <p>${resource.description}</p>
+          <div class="resource-links">${links}</div>
+        </article>
+      `;
+    })
+    .join("");
 }
 
 function setupThemeToggle() {
@@ -161,6 +242,7 @@ function setupNav() {
 }
 
 function setupReveal() {
+  const revealItems = document.querySelectorAll(".reveal");
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -171,7 +253,14 @@ function setupReveal() {
     },
     { threshold: 0.12 }
   );
-  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  revealItems.forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.95) {
+      el.classList.add("visible");
+      return;
+    }
+    observer.observe(el);
+  });
 }
 
 function setupBackToTop() {
@@ -208,6 +297,7 @@ function setupYear() {
 renderProjects();
 renderPublications();
 renderNews();
+renderResources();
 setupThemeToggle();
 setupNav();
 setupReveal();
