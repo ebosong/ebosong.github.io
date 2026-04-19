@@ -3,20 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>YOUR NAME | Publications</title>
+    <title>YOUR NAME | Academic Homepage</title>
     <meta
       name="description"
-      content="Personal publication homepage of YOUR NAME, focusing on embodied intelligence, autonomous driving, and UAV navigation."
+      content="Personal academic homepage of YOUR NAME, focusing on embodied intelligence, autonomous driving, UAV navigation, and robot learning."
     />
     <meta
       name="keywords"
-      content="Embodied Intelligence,Autonomous Driving,UAV Navigation,Publications"
+      content="Embodied Intelligence,Autonomous Driving,UAV Navigation,Robot Learning,Publications"
     />
     <meta name="author" content="YOUR NAME" />
-    <meta property="og:title" content="YOUR NAME | Publications" />
+    <meta property="og:title" content="YOUR NAME | Academic Homepage" />
     <meta
       property="og:description"
-      content="Publications in embodied intelligence, autonomous driving, and UAV navigation."
+      content="Personal academic homepage and selected publications in embodied intelligence, autonomous driving, and UAV navigation."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://YOUR_GITHUB_USERNAME.github.io/" />
@@ -28,6 +28,7 @@
       <div class="container nav-container">
         <a class="brand" href="#top">YOUR NAME</a>
         <nav class="site-nav" aria-label="Primary navigation">
+          <a href="#profile">Profile</a>
           <a href="#publications">Publications</a>
           <a href="mailto:your.email@example.com">Email</a>
           <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener"
@@ -38,21 +39,61 @@
     </header>
 
     <main>
-      <section class="hero">
-        <div class="container">
-          <p class="eyebrow">Embodied Intelligence · Autonomous Driving · UAV Navigation</p>
-          <h1>Publications</h1>
-          <p class="hero-text">
-            Selected research works on embodied agents, autonomous driving,
-            world models, VLA systems, and aerial navigation.
-          </p>
+      <section id="profile" class="hero">
+        <div class="container hero-grid">
+          <div class="hero-main">
+            <p class="eyebrow">Embodied Intelligence / Autonomous Driving / UAV Navigation</p>
+            <h1>YOUR NAME</h1>
+            <p class="role">Researcher in embodied intelligence and autonomous systems.</p>
+            <p class="hero-text">
+              My research focuses on embodied agents that perceive, predict, and
+              act in complex real-world environments, with interests in autonomous
+              driving, UAV navigation, world models, and multimodal decision making.
+            </p>
+            <div class="research-tags" aria-label="Research interests">
+              <span>Embodied AI</span>
+              <span>Autonomous Driving</span>
+              <span>UAV Navigation</span>
+              <span>World Models</span>
+              <span>Robot Learning</span>
+            </div>
+            <div class="profile-links">
+              <a href="mailto:your.email@example.com">Email</a>
+              <a href="#" target="_blank" rel="noopener">Google Scholar</a>
+              <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener"
+                >GitHub</a
+              >
+            </div>
+          </div>
+
+          <aside class="info-card" aria-label="Personal information">
+            <div class="photo-placeholder">Photo</div>
+            <dl>
+              <div>
+                <dt>Affiliation</dt>
+                <dd>Your Institution / Lab</dd>
+              </div>
+              <div>
+                <dt>Position</dt>
+                <dd>Your Position</dd>
+              </div>
+              <div>
+                <dt>Email</dt>
+                <dd>your.email@example.com</dd>
+              </div>
+              <div>
+                <dt>Location</dt>
+                <dd>Your City, Your Country</dd>
+              </div>
+            </dl>
+          </aside>
         </div>
       </section>
 
       <section id="publications" class="section">
         <div class="container">
           <div class="section-heading">
-            <h2>Publications</h2>
+            <h2>Selected Publications</h2>
             <p>Replace the placeholders with your accepted papers and preprints.</p>
           </div>
           <div id="publicationList" class="publication-list"></div>
@@ -63,7 +104,7 @@
     <footer class="site-footer">
       <div class="container">
         <p>
-          &copy; <span id="currentYear"></span> YOUR NAME ·
+          &copy; <span id="currentYear"></span> YOUR NAME.
           <a href="mailto:your.email@example.com">your.email@example.com</a>
         </p>
       </div>
