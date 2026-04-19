@@ -63,7 +63,6 @@ function setupYear() {
 
 function setupPageTransitions() {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  requestAnimationFrame(() => document.body.classList.add("page-ready"));
   if (reduceMotion) return;
 
   document.querySelectorAll("a[data-page-link]").forEach((link) => {
