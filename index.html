@@ -16,7 +16,7 @@
     <meta property="og:title" content="YOUR NAME | Academic Homepage" />
     <meta
       property="og:description"
-      content="Personal academic homepage and selected publications in embodied intelligence, autonomous driving, and UAV navigation."
+      content="Personal academic homepage in embodied intelligence, autonomous driving, and UAV navigation."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://YOUR_GITHUB_USERNAME.github.io/" />
@@ -24,12 +24,12 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="site-header" id="top">
+    <header class="site-header">
       <div class="container nav-container">
-        <a class="brand" href="#top">YOUR NAME</a>
+        <a class="brand" href="index.html" data-page-link>YOUR NAME</a>
         <nav class="site-nav" aria-label="Primary navigation">
-          <a href="#profile">Profile</a>
-          <a href="#publications">Publications</a>
+          <a class="active" href="index.html" data-page-link>Profile</a>
+          <a href="publications.html" data-page-link>Publications</a>
           <a href="mailto:your.email@example.com">Email</a>
           <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener"
             >GitHub</a
@@ -38,35 +38,10 @@
       </div>
     </header>
 
-    <main>
-      <section id="profile" class="hero">
-        <div class="container hero-grid">
-          <div class="hero-main">
-            <p class="eyebrow">Embodied Intelligence / Autonomous Driving / UAV Navigation</p>
-            <h1>YOUR NAME</h1>
-            <p class="role">Researcher in embodied intelligence and autonomous systems.</p>
-            <p class="hero-text">
-              My research focuses on embodied agents that perceive, predict, and
-              act in complex real-world environments, with interests in autonomous
-              driving, UAV navigation, world models, and multimodal decision making.
-            </p>
-            <div class="research-tags" aria-label="Research interests">
-              <span>Embodied AI</span>
-              <span>Autonomous Driving</span>
-              <span>UAV Navigation</span>
-              <span>World Models</span>
-              <span>Robot Learning</span>
-            </div>
-            <div class="profile-links">
-              <a href="mailto:your.email@example.com">Email</a>
-              <a href="#" target="_blank" rel="noopener">Google Scholar</a>
-              <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener"
-                >GitHub</a
-              >
-            </div>
-          </div>
-
-          <aside class="info-card" aria-label="Personal information">
+    <main class="page-shell">
+      <section class="profile-page">
+        <div class="container profile-grid">
+          <aside class="portrait-card" aria-label="Personal information">
             <div class="photo-placeholder">Photo</div>
             <dl>
               <div>
@@ -87,16 +62,44 @@
               </div>
             </dl>
           </aside>
-        </div>
-      </section>
 
-      <section id="publications" class="section">
-        <div class="container">
-          <div class="section-heading">
-            <h2>Selected Publications</h2>
-            <p>Replace the placeholders with your accepted papers and preprints.</p>
+          <div class="profile-main">
+            <p class="eyebrow">Embodied Intelligence / Autonomous Driving / UAV Navigation</p>
+            <h1>YOUR NAME</h1>
+            <p class="role">Researcher in embodied intelligence and autonomous systems.</p>
+            <p class="lead">
+              My research focuses on embodied agents that perceive, predict, and
+              act in complex real-world environments, with interests in autonomous
+              driving, UAV navigation, world models, and multimodal decision making.
+            </p>
+
+            <div class="research-panel" aria-label="Research interests">
+              <h2>Research Focus</h2>
+              <div class="focus-list">
+                <article>
+                  <h3>Embodied AI</h3>
+                  <p>Perception, memory, planning, and action for physical agents.</p>
+                </article>
+                <article>
+                  <h3>Autonomous Driving</h3>
+                  <p>Prediction, planning, and safety evaluation in traffic scenes.</p>
+                </article>
+                <article>
+                  <h3>UAV Navigation</h3>
+                  <p>Long-horizon aerial navigation under uncertainty.</p>
+                </article>
+              </div>
+            </div>
+
+            <div class="profile-links">
+              <a href="mailto:your.email@example.com">Email</a>
+              <a href="#" target="_blank" rel="noopener">Google Scholar</a>
+              <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener"
+                >GitHub</a
+              >
+              <a href="publications.html" data-page-link>Publications</a>
+            </div>
           </div>
-          <div id="publicationList" class="publication-list"></div>
         </div>
       </section>
     </main>

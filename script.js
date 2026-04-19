@@ -61,5 +61,30 @@ function setupYear() {
   if (year) year.textContent = String(new Date().getFullYear());
 }
 
+function setupPageTransitions() {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  requestAnimationFrame(() => document.body.classList.add("page-ready"));
+  if (reduceMotion) return;
+
+  document.querySelectorAll("a[data-page-link]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const href = link.getAttribute("href");
+      if (!href || href.startsWith("#")) return;
+      const target = new URL(href, window.location.href);
+      if (target.origin !== window.location.origin) return;
+      if (target.pathname === window.location.pathname && target.hash === window.location.hash) {
+        return;
+      }
+
+      event.preventDefault();
+      document.body.classList.add("page-leaving");
+      window.setTimeout(() => {
+        window.location.href = target.href;
+      }, 220);
+    });
+  });
+}
+
 renderPublications();
 setupYear();
+setupPageTransitions();
