@@ -65,8 +65,24 @@ function setupPageTransitions() {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduceMotion) return;
 
+  const overlay = document.createElement("div");
+  overlay.className = "route-transition";
+  overlay.setAttribute("aria-hidden", "true");
+  document.body.appendChild(overlay);
+
+  const lastTransition = sessionStorage.getItem("routeTransition");
+  if (lastTransition) {
+    const [x, y] = lastTransition.split(",");
+    document.body.style.setProperty("--tx", `${x || 50}vw`);
+    document.body.style.setProperty("--ty", `${y || 50}vh`);
+    document.body.classList.add("route-arriving");
+    sessionStorage.removeItem("routeTransition");
+    window.setTimeout(() => document.body.classList.remove("route-arriving"), 640);
+  }
+
   document.querySelectorAll("a[data-page-link]").forEach((link) => {
     link.addEventListener("click", (event) => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       const href = link.getAttribute("href");
       if (!href || href.startsWith("#")) return;
       const target = new URL(href, window.location.href);
@@ -76,14 +92,46 @@ function setupPageTransitions() {
       }
 
       event.preventDefault();
+      const x = Math.round((event.clientX / window.innerWidth) * 100);
+      const y = Math.round((event.clientY / window.innerHeight) * 100);
+      document.body.style.setProperty("--tx", `${x}vw`);
+      document.body.style.setProperty("--ty", `${y}vh`);
+      sessionStorage.setItem("routeTransition", `${x},${y}`);
+      document.body.classList.add("route-leaving");
       document.body.classList.add("page-leaving");
       window.setTimeout(() => {
         window.location.href = target.href;
-      }, 220);
+      }, 520);
     });
+  });
+}
+
+function setupCyberpunkEffects() {
+  document.querySelectorAll("h1").forEach((heading) => {
+    heading.dataset.glitch = heading.textContent;
+  });
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const finePointer = window.matchMedia("(pointer: fine)").matches;
+  if (reduceMotion || !finePointer) return;
+
+  const glow = document.createElement("div");
+  glow.className = "cursor-glow";
+  glow.setAttribute("aria-hidden", "true");
+  document.body.appendChild(glow);
+
+  window.addEventListener("pointermove", (event) => {
+    glow.style.left = `${event.clientX}px`;
+    glow.style.top = `${event.clientY}px`;
+    glow.style.opacity = "1";
+  });
+
+  window.addEventListener("pointerleave", () => {
+    glow.style.opacity = "0";
   });
 }
 
 renderPublications();
 setupYear();
+setupCyberpunkEffects();
 setupPageTransitions();
